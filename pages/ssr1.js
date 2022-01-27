@@ -3,6 +3,7 @@ import Link from 'next/link';
 const SSR1 = ({ data }) => {
     return <>
         <h1>Hello {data.name}</h1>
+        <p>How are you?</p>
         <Link href={'ssr2'}>Visit SSR2 Page</Link>
     </>
 };
