@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
-const SSR4 = ({ data }) => {
+const SSR4 = ({ apiData }) => {
     return <>
-        <h1>Hello {data.name} from SSR3</h1>
+        <h1>Hello {apiData.name} from SSR4</h1>
         <Link href={'ssr1'}>Visit SSR1 Page</Link>
         <Link href={'ssr2'}>Visit SSR2 Page</Link>
         <Link href={'ssr3'}>Visit SSR3 Page</Link>
