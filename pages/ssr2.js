@@ -5,6 +5,8 @@ const SSR1 = ({ data }) => {
         <h1>Hello {data.name}</h1>
         <p>How is your day going so far?</p>
         <Link href={'ssr1'}>Visit SSR1 Page</Link>
+        <Link href={'ssr3'}>Visit SSR3 Page</Link>
+        <Link href={'ssr4'}>Visit SSR4 Page</Link>
     </>
 };
 
