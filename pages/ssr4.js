@@ -1,6 +1,11 @@
 import Link from 'next/link';
+import {useEffect} from "react";
 
-const SSR4 = ({ apiData }) => {
+const SSR4 = ({ apiData, startTime }) => {
+    useEffect(() => {
+        const endTime = Date.now();
+        console.log(`The time taken to reach here is ${(endTime-startTime)} ms`)
+    }, []);
     return <>
         <h1>Hello {apiData.name} from SSR4</h1>
         <Link href={'ssr1'}>Visit SSR1 Page</Link>

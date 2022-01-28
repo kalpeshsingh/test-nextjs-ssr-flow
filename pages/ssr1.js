@@ -1,6 +1,11 @@
 import Link from 'next/link';
+import {useEffect} from "react";
 
-const SSR1 = ({ data }) => {
+const SSR1 = ({ data, startTime }) => {
+    useEffect(() => {
+        const endTime = Date.now();
+        console.log(`The time taken to reach here is ${(endTime-startTime)} ms`)
+    }, []);
     return <>
         <h1>Hello {data.name}</h1>
         <p>How are you?</p>
