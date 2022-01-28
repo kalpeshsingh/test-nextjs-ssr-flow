@@ -1,10 +1,13 @@
 import Link from 'next/link';
 import {useEffect} from "react";
+import {useRouter} from "next/router";
+
 
 const SSR2 = ({ data, startTime }) => {
+    const router = useRouter();
     useEffect(() => {
         const endTime = Date.now();
-        console.log(`The time taken to reach here is ${(endTime-startTime)} ms`)
+        console.log(`The time taken to reach ${router.pathname} is ${(endTime-startTime)} ms`)
     }, []);
     return <>
         <h1>Hello {data.name}</h1>
