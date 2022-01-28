@@ -17,12 +17,12 @@ const SSR2 = ({ data, startTime }) => {
 
 // This gets called on every request
 export async function getServerSideProps() {
+    const startTime = Date.now();
     // Fetch data from external API
     const res = await fetch(`https://test-nextjs-ssr-flow.vercel.app/api/pokemon`)
     const data = await res.json()
-
     // Pass data to the page via props
-    return { props: { data } }
+    return { props: { data, startTime } }
 }
 
 export default SSR2;

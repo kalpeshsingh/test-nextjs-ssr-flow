@@ -19,6 +19,7 @@ const SSR3 = ({ apiData, startTime }) => {
 };
 
 SSR3.getInitialProps = async (context) => {
+    const startTime = Date.now();
     let apiData = {};
     if (context.req) {
         // Fetch data from external API
@@ -26,7 +27,7 @@ SSR3.getInitialProps = async (context) => {
         const data = await res.json();
         apiData = Object.assign({}, data, {date: format(new Date(), "'Today is a' eeee")});
     }
-    return {apiData};
+    return {apiData, startTime};
 }
 export default SSR3;
 

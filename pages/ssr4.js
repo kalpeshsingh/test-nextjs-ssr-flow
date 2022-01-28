@@ -15,6 +15,7 @@ const SSR4 = ({ apiData, startTime }) => {
 };
 
 SSR4.getInitialProps = async (context) => {
+    const startTime = Date.now();
     let apiData = {};
     if (context.req) {
         // Fetch data from external API
@@ -22,7 +23,7 @@ SSR4.getInitialProps = async (context) => {
         const data = await res.json();
         apiData = data;
     }
-    return {apiData};
+    return {apiData, startTime};
 }
 
 export default SSR4;
